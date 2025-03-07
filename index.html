@@ -3,46 +3,69 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portales Web II Seccion 1901</title>
-  <link rel="stylesheet" href="less/main.less">
+  <link rel="stylesheet" href="less/main.less" />
 </head>
 
 <body>
   {{>header}}
+  <!-- Que es preprocesador de CSS-->
+  <!--
+      Permite Generar CSS a partir de la sintaxis única del preprocesador
+      LESS -- 
+      SASS
+      STYLUS
+    -->
   <main>
+    <section class="cardsGallery">
+      {{#each productosImpulsados}}
+        {{> imgcards this}}
+      {{/each}}
+    </section>
     <section class="blogContainer">
       <article class="blog">
-        <h1>Una Entrada de Blog</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident distinctio excepturi vitae harum voluptates
-          voluptas, prarrrrrrsentium molestias nulla ad obcaecati ducimus beatae natus explicabo doloribus voluptatem optio
-          officia sit? Maxime.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident distinctio excepturi vitae harum voluptates
-          voluptas, praesentium molestias nulla ad obcaecati ducimus beatae natus explicabo doloribus voluptatem optio
-          officia sit? Maxime.
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident distinctio excepturi vitae harum voluptates
-          voluptas, praesentium molestias nulla ad obcaecati ducimus beatae natus explicabo doloribus voluptatem optio
-          officia sit? Maxime.
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident distinctio excepturi vitae harum voluptates
-          voluptas, praesentium molestias nulla ad obcaecati ducimus beatae natus explicabo doloribus voluptatem optio
-          officia sit? Maxime.
+        <h1>Una Entraga de Blog</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, ipsum praesentium! Aperiam vel sint
+          excepturi porro vitae nemo voluptate repellendus sed doloribus, eum ipsam aliquid, fugiat nostrum, a molestias
+          dolorum?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam amet dolorum incidunt, quidem deserunt
+          voluptate quos vel quia neque impedit ipsum corrupti suscipit libero tempore nihil quaerat eius minima
+          dolorem?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium architecto quidem vero cumque dolore
+          voluptatum unde dicta? Quaerat minus quisquam sequi, ipsa, molestiae aliquid quod dignissimos ab deleniti, aut
+          aliquam.</p>
       </article>
     </section>
-    <section>
-      {{>imgcards 
-        imgurl ='https://picsum.photos/id/30/300/200'
+    <section class="cardsGallery">
+      {{> imgcards
+        imgurl='https://picsum.photos/id/30/300/200'
         imgdsc='Foto para la tarjeta'
-    }}
+      }}
+      {{> imgcards
+        imgurl='https://picsum.photos/id/35/300/200'
+        imgdsc='Foto para la tarjeta 2'
+      }}
+      {{> imgcards
+        imgurl='https://picsum.photos/id/39/300/200'
+        imgdsc='Foto para la tarjeta 3'
+      }}
+    </section>
+     <section class="cardsGallery">
+      {{#each galeriaFotosProductos}}
+        {{> imgcards this}}
+      {{/each}}
+    </section>
+    <section>
       <div>
-        <a class="btn-primary" href="">Boton Primario</a>
+        <a class="btn-primary" href="">Botón Primario</a>
       </div>
       <div>
-        <a class="btn-secondary" href="">Boton Secundario</a>
+        <a class="btn-secondary" href="">Botón Secundario</a>
       </div>
       <div>
-        <a class="btn" href="">Boton Primario</a>
-        <button class="btn" href="">Boton Por Defecto</button>
+        <a class="btn" href="">Botón Por Defecto</a>
+        <button class="btn" href="">Botón Por Defecto</button>
       </div>
       <div>
         <a class="btn-round" href="">+</a>
@@ -80,12 +103,14 @@
             Col Base 3
           </div>
         </div>
+
       </div>
     </section>
     <section>
       {{>tabla}}
     </section>
   </main>
+  {{>footer}}
 </body>
-{{>footer}}
+
 </html>
