@@ -1,7 +1,9 @@
 import { navigation } from "./common/navigation"
+import { tabledata } from './common/tabledata';  // Asegúrate de que la ruta sea correcta
 export const getPageContext = (pagePath)=>{
     const commonVariables ={
-        ...navigation
+        ...navigation,
+        ...tabledata
     }
 
     let pageVariables = {};
